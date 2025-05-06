@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/app.js"
   },
   "author": "\"Farindra Bhandari\"",
   "license": "ISC",
+  "type": "module",
   "description": "",
   "dependencies": {
     "express": "^5.1.0"

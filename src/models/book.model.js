@@ -3,7 +3,7 @@ import { DataTypes } from "sequelize"
 const bookModel = (sequelize)=> {
    const Book= sequelize.define("book", {
     bookName: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING, // type of field "string, number, etc"
         allowNull: false, // required: true
     },
     bookAuthor: {

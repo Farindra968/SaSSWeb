@@ -1,9 +1,11 @@
-import epxpress from "express";
+import epxpress, { json } from "express";
 import db from "./config/db.js"
 const app = epxpress();
 
 
-app.use("/", (req, res)=>{
+app.use(epxpress.json())
+
+app.get("/", (req, res)=>{
     res.json({
         "name": "SaSS Web Development",
         "port": 5000,

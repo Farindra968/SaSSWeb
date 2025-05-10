@@ -29,7 +29,14 @@ db.Sequelize = Sequelize;
 
 // connecting model
 db.books = bookModel(sequelize);
-db.users = userModel(sequelize)
+db.users = userModel(sequelize);
+
+/// migration
+sequelize.sync({force: false}).then(()=>{
+  console.log("Migrate Successfully vayo ")
+}).catch((error)=>{
+  console.log(`Migrate vaya na guz !!! ${error}`)
+})
 
 // Exporting the db object for use in other parts of the application
 export default db;

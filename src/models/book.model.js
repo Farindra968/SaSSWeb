@@ -11,7 +11,7 @@ const bookModel = (sequelize)=> {
         defaultValue: "Farindra" // if bookAuthor name is not given
     },
     bookPrice: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     bookGenre: {

@@ -1,6 +1,7 @@
 // Importing Sequelize class from the 'sequelize' library
 import { DataTypes, Sequelize } from "sequelize";
 import bookModel from "../models/book.model.js";
+import userModel from "../models/user.model.js";
 
 // Creating a Sequelize instance to connect with Supabase PostgreSQL database
 /// Supabase Postgress DB connection [ORM]
@@ -28,6 +29,7 @@ db.Sequelize = Sequelize;
 
 // connecting model
 db.books = bookModel(sequelize);
+db.users = userModel(sequelize)
 
 // Exporting the db object for use in other parts of the application
 export default db;

@@ -7,7 +7,8 @@ const bookModel = (sequelize)=> {
         allowNull: false, // required: true
     },
     bookAuthor: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        defaultValue: "Farindra" // if bookAuthor name is not given
     },
     bookPrice: {
         type: DataTypes.NUMBER,

@@ -1,5 +1,6 @@
 import epxpress, { json } from "express";
 import db from "./config/db.js"
+import bookRoute from "./routes/book.route.js"
 const app = epxpress();
 
 
@@ -13,6 +14,10 @@ app.get("/", (req, res)=>{
         "Author": "Farindra"
     })
 })
+
+
+// 
+app.use("/book", bookRoute)
 
 app.listen(5000,()=>{
     console.log("Server Running Sucessfully")

@@ -1,4 +1,4 @@
-import bookServices from "../services/bookServices.js";
+import bookServices from "../services/book.service.js";
 
 // get all book
 const getAllBooks = async (req, res) => {

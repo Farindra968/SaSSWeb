@@ -39,4 +39,4 @@ sequelize.sync({ alter: false}).then(()=>{
 })
 
 // Exporting the db object for use in other parts of the application
-export default db;
+export default db

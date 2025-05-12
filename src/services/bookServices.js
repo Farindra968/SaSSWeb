@@ -1,12 +1,26 @@
-import books from "../config/db.js"
-const getAllBooks = async()=>{
-    try {
-        const data = await books.findAll();
-        return;
+import db from "../config/db.js";
 
-    } catch (error) {
-        res.status(500).send(error.message)
-    }
+// Get all Books [R]
+const getAllBooks = async () => {
+  const data = await db.books.findAll();
+  return data;
+};
+
+// Create Books
+const addBook = async (data)=> {
+    const book = await db.books.create({...data});
+    return book;
 }
 
-export default {getAllBooks, };
+// Find book by ID 
+const findBookById = async (id)=> {
+    return await db.books.findByPk(id);
+}
+
+// delete book
+const deleteBook = async (id)=> {
+    return await db.books.destroy({where:{id}})
+
+}
+
+export default { getAllBooks, addBook, findBookById, deleteBook };

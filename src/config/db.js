@@ -38,5 +38,7 @@ sequelize.sync({ alter: false}).then(()=>{
   console.log(`Migrate vaya na guz !!! ${error}`)
 })
 
+
+
 // Exporting the db object for use in other parts of the application
 export default db

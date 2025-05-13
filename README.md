@@ -348,3 +348,4 @@ app.listen(PORT, () => {
 - Sequelize ORM helps manage models, migrations, and queries easily.
 - Be sure to secure your .env file and database credentials.
 
+

@@ -1,3 +1,4 @@
+import { where } from "sequelize";
 import db from "../config/db.js";
 
 // Get all Books [R]
@@ -23,4 +24,9 @@ const deleteBook = async (id)=> {
 
 }
 
-export default { getAllBooks, addBook, findBookById, deleteBook };
+// update books
+const updateBook = async (data, id)=>{
+    return await db.books.update(data, {where:{id}})
+}
+
+export default { getAllBooks, addBook, findBookById, deleteBook, updateBook };

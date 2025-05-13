@@ -50,4 +50,16 @@ const deleteBook = async (req, res)=> {
     }
 }
 
-export { getAllBooks, addBook, findBookById, deleteBook };
+// update book
+const updateBook  = async (req, res)=> {
+    const {id}= req.params
+    try {
+        const book = await bookServices.updateBook(req.body, id)
+        /// if book not found
+        if(!book) {return res.status(404).send("Book not found")}
+        res.json(book)
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+export { getAllBooks, addBook, findBookById, deleteBook, updateBook };

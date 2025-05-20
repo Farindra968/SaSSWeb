@@ -12,11 +12,12 @@ const getAllBooks = async (req, res) => {
 
 // create Books
 const addBook = async (req, res)=> {
-    const {bookName, bookPrice}= req.body
+    const {name, price, image}= req.body
     try {
         /// validation 
-        if(!bookName) return res.status(400).send("Book Name is Required")
-        if(!bookPrice) return res.status(400).send("Book Price is Required")
+        if(!name) return res.status(400).send("Book Name is Required")
+        if(!price) return res.status(400).send("Book Price is Required")
+                    if(!image) return res.status(400).send("Book Price is Required")
 
         const data =await bookServices.addBook(req.body)
         res.json(data)

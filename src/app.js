@@ -1,9 +1,13 @@
 import epxpress, { json } from "express";
 import db from "./config/db.js"
 import bookRoute from "./routes/book.route.js"
+import cors from "cors"
 const app = epxpress();
 
-
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true // Allow cookies if needed
+}));
 app.use(epxpress.json())
 
 app.get("/", (req, res)=>{

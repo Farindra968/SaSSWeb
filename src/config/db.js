@@ -32,7 +32,7 @@ db.books = bookModel(sequelize);
 db.users = userModel(sequelize);
 
 /// migration
-sequelize.sync({ alter: false}).then(()=>{
+sequelize.sync({alter: false}).then(()=>{
   console.log("Migrate Successfully vayo ")
 }).catch((error)=>{
   console.log(`Migrate vaya na guz !!! ${error}`)

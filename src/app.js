@@ -21,7 +21,7 @@ app.get("/", (req, res)=>{
 
 
 // 
-app.use("/book", bookRoute)
+app.use("/auth/book", bookRoute)
 
 app.listen(5000,()=>{
     console.log("Server Running Sucessfully")

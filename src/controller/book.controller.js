@@ -38,6 +38,29 @@ const findBookById = async (req, res)=> {
     }
 }
 
+// Get all Genre
+const getAllGenre = async (req, res)=> {
+    try {
+        const genre = await bookServices.getAllGenre()
+        res.json(genre)
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
+// Get Book by Genre
+const findBookByGenre = async (req, res)=> {
+    const {genreID} = req.params
+    try {
+        const books = await bookServices.findBookByGenre(genreID)
+        // if book not found
+        if(!books) {return res.status(404).send("Book not found")}
+        res.json(books)
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
 // delete book
 const deleteBook = async (req, res)=> {
     const {id}= req.params
@@ -63,4 +86,4 @@ const updateBook  = async (req, res)=> {
         res.status(500).send(error.message)
     }
 }
-export { getAllBooks, addBook, findBookById, deleteBook, updateBook };
+export { getAllBooks, addBook, findBookById, getAllGenre, findBookByGenre, deleteBook, updateBook };

@@ -26,6 +26,7 @@ const getAllGenre = async () => {
     group: ["genre"],
     raw: true,
   });
+
 };
 
 // Find Books by Genere

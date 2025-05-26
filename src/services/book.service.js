@@ -21,11 +21,12 @@ const findBookById = async (id) => {
 
 // Get all Genre
 const getAllGenre = async () => {
-  return await db.books.findAll({
+  const genre= await db.books.findAll({
     attributes: ["genre"],
     group: ["genre"],
     raw: true,
   });
+  return genre.map((g)=> g.genre);
 
 };
 

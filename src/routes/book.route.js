@@ -3,10 +3,16 @@ import { addBook, deleteBook, findBookByGenre, findBookById, getAllBooks, getAll
 
 const router = express.Router();
 
+// auth/book [get all book]
 router.route("/").get(getAllBooks).post(addBook)
-router.route("/:id").get(findBookById).delete(deleteBook).patch(updateBook)
-router.route("/genre").get(getAllGenre)
-router.route("/genre/:genreID").get(findBookByGenre)
 
+// /auth/book/genre [get all genre]
+router.route("/genre").get(getAllGenre)
+
+// /auth/book/:id
+router.route("/:id").get(findBookById).delete(deleteBook).patch(updateBook)
+
+// /auth/book/genre/:genreID
+router.route("/genre/:genreID").get(findBookByGenre)
 
 export default router
